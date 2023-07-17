@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  app:
+    restart: always
+    build: .
+    ports:
+      - 1337:1337
+    volumes:
+      - .:/app
+    entrypoint: [ "python", "-u","main.py","runserver" ]
