@@ -9,7 +9,9 @@ def checker():
         old_link=request.form['first']
         new_link = request.form['second']
         urls=request.form['urls'].split()
-        return urls_checker(old_link,new_link,urls)
+        data=urls_checker(old_link,new_link,urls)
+        columns=data.keys()
+        return render_template('output_data.html',data=data,colnames=columns)
     return render_template('index.html')
 
 
